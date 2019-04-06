@@ -1,0 +1,70 @@
+In class, you learned about some algorithms for sorting and searching
+collections, as well as how to write recursive methods. This lab allows you
+to apply those skills to support a marketing campaign for HCC Honey Inc.
+
+The bee project has recently determined that, while making and selling
+honey is nice, they would also like to raise extra money by allowing students
+to "buy" a bee and give it a name. To that end, HCC Honey Inc’s plans to
+sell names, but they have a problem: they don’t want two bees to have the
+same name.  Whenever bee is bought, they have to know whether that bee name
+has already been used.  Your task will be to create a list of the bee names
+that have already been taken and provide a way for a user to determine
+whether a new request for a bee name is already in the list.
+
+First, you will create a list of the names of bees. These are the names so
+far: {
+
+  Angel
+  Thurmon
+  Nancy
+  Bubba
+  Thelonius
+  Calico
+  Cassius
+  Jojo
+  Zeke
+  Yancy
+  Diane
+  Xavier eXeter
+  Elaine Elosky
+  Cardi Bee
+
+}
+
+Then, at the console, query the user for a bee's name. If the user types 0,
+exit the program. Otherwise, take the given bee name and search the list of
+bee names:{
+
+  Search using a recursive implementation of binary search
+
+  Binary search requires a sort, so implement a recursive version of
+  either selection sort, or merge sort
+
+}
+
+You must use recursion to implement these methods (HCC Honey Inc. has heard
+that recursion is a new buzzword), and you cannot use built-in Java
+implementations of sort or search.
+
+If the bee's name is found in the list of bees, output “Bee more creative!
+This name is taken...” If the bee's name is not found in the list of bees,
+output “You got a bee!” Continue to query the user for bee names until the
+user types 0.
+
+Additional piece: shoot. HCC Honey Inc. just figured out that there may be a
+bug in their program: what if two people want the same name!?! Include as
+part of your Lab a description of how you would solve this problem in a
+future iteration of the program to allow multiple bees with the same name.
+
+Additional requirements:{
+  A Javadoc comment must appear at the top of the source code containing:
+  Your name, course number and section (001, 002,... for daytime, 050,
+  051,... for evening), and a brief description of what the program does.
+
+  Appropriate commenting must be used.
+
+  Consistent indentation must be used to make the code easy to read.
+
+  Submit the entire project as a zipped file through Canvas.
+
+}
