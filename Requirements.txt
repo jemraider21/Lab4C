@@ -68,3 +68,10 @@ Additional requirements:{
   Submit the entire project as a zipped file through Canvas.
 
 }
+
+Stuff to send to beeNameSearch:
+  String[] list = list of bee names
+  String name = name entered by the user
+  int low = lowest number in search
+  int high = highest number in search
+  int middle = (low + high +1)/2 = the section to look at
