@@ -22,6 +22,8 @@
          String[] bees = {"Angel", "Thurmon", "Nancy", "Bubba", "Thelonius", 
          "Caluci", "Cassius", "Jojo", "Zeke", "Yancy", "Diane", "Xavier eXeter", 
          "Elaine Elosky", "Cardi Bee"}; // Will be used to create list
+         sortedBeeNames(bees, bees.length);
+         System.out.println(Arrays.toString(bees));
          int looper = 1; // Will be used to either break the loop or continue it
 
          // Create the list, then sort it alphabetically
@@ -51,6 +53,20 @@
          input.close();
          System.out.println("Goodbye!\n");
      } // End main method
+
+     public static void sortedBeeNames(String[] names, int arrayLength){
+         
+        for (int i = 0; i < names.length-1; i++){
+            for (int j = i+1; j<names.length; j++){
+                if(names[i].compareTo(names[j]) >= 0){
+                    String temp = names[i];
+                    names[i] = names[j];
+                    names[j] = temp;
+                }
+            }
+        }
+         
+     }
 
      public static int beeNameSearch(List<String> list, String name, int low, int high){
          int middle = (low + high + 1) / 2;
