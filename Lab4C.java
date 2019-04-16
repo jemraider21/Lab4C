@@ -22,7 +22,7 @@
          String[] bees = {"Angel", "Thurmon", "Nancy", "Bubba", "Thelonius", 
          "Caluci", "Cassius", "Jojo", "Zeke", "Yancy", "Diane", "Xavier eXeter", 
          "Elaine Elosky", "Cardi Bee"}; // Will be used to create list
-         sortedBeeNames(bees, bees.length);
+         // sortedBeeNames(bees, bees.length); // Used for making sure that the array is sorted
          System.out.println(Arrays.toString(bees));
          int looper = 1; // Will be used to either break the loop or continue it
 
@@ -30,7 +30,10 @@
          List<String> beeNames = Arrays.asList(bees);
          Collections.sort(beeNames);
 
+         // Loop through the prompt of asking the user for a bee name and searching
+         // the array for the name. Display the results based on the search results
          do{
+            // Prompt the user for a bee's name
             System.out.print("Enter a bee's name: ");
             String name = input.nextLine();
 
@@ -54,25 +57,27 @@
          System.out.println("Goodbye!\n");
      } // End main method
 
-     public static void sortedBeeNames(String[] names, int arrayLength){
-         
+     // Method to sort the array alphabetically (a -> z)
+     public static void sortedBeeNames(String[] names, int arrayLength){ 
         for (int i = 0; i < names.length-1; i++){
             for (int j = i+1; j<names.length; j++){
-                if(names[i].compareTo(names[j]) >= 0){
+                // If first name is greater than the second name, change the first name to the value of the second
+                if(names[i].compareTo(names[j]) >= 0){ 
                     String temp = names[i];
                     names[i] = names[j];
                     names[j] = temp;
                 }
             }
-        }
-         
+        }  
      }
 
+     // Method to search the array for a specified name
      public static int beeNameSearch(List<String> list, String name, int low, int high){
          int middle = (low + high + 1) / 2;
          name = name.toUpperCase();
          String middleEntry = (list.get(middle)).toUpperCase(); // Get entry from list at "middle" index
 
+         // Base case
          if(high < low){
              return -1;
          }
