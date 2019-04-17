@@ -22,8 +22,8 @@
          String[] bees = {"Angel", "Thurmon", "Nancy", "Bubba", "Thelonius", 
          "Caluci", "Cassius", "Jojo", "Zeke", "Yancy", "Diane", "Xavier eXeter", 
          "Elaine Elosky", "Cardi Bee"}; // Will be used to create list
-         // sortedBeeNames(bees, bees.length); // Used for making sure that the array is sorted
-         System.out.println(Arrays.toString(bees));
+         sortedBeeNames(bees, bees.length); 
+         System.out.println(Arrays.toString(bees)); // Used for making sure that the array is sorted
          int looper = 1; // Will be used to either break the loop or continue it
 
          // Create the list, then sort it alphabetically
@@ -59,16 +59,20 @@
 
      // Method to sort the array alphabetically (a -> z)
      public static void sortedBeeNames(String[] names, int arrayLength){ 
-        for (int i = 0; i < names.length-1; i++){
-            for (int j = i+1; j<names.length; j++){
-                // If first name is greater than the second name, change the first name to the value of the second
-                if(names[i].compareTo(names[j]) >= 0){ 
+        if(arrayLength == 1){ // Base case
+            String complete = "yes";
+        } else {
+            for(int i = 0; i < arrayLength - 1; i++){
+                // If first name is larger than second name, switch them
+                if(names[i].compareTo(names[i+1]) >= 0){ 
                     String temp = names[i];
-                    names[i] = names[j];
-                    names[j] = temp;
+                    names[i] = names[i+1];
+                    names[i+1] = temp;
                 }
             }
-        }  
+            // Recursively call the method again
+            sortedBeeNames(names, arrayLength-1);
+        }
      }
 
      // Method to search the array for a specified name
